@@ -1,3 +1,22 @@
+class MeshObj {
+
+  ArrayList<MeshObjChild> obj;
+ 
+  MeshObj(PShape _shape) {
+    obj = new ArrayList<MeshObjChild>();
+    
+    for (int i=0; i<_shape.getChildCount(); i++) {
+      obj.add(new MeshObjChild(_shape.getChild(i)));
+    }
+  }
+  
+  void draw() {
+    for (int i=0; i<obj.size(); i++) {
+      obj.get(i).draw();
+    }
+  }
+}
+
 class MeshObjChild {
 
   ArrayList<PVector> points;
